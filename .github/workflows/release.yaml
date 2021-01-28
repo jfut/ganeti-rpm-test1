@@ -45,6 +45,8 @@ jobs:
         run: |
           ./build $(echo ${BUILD_IMAGE} | sed 's/-/:/g') -a -bi
           echo "##[set-output name=release-tag;]$(echo ${{ github.ref }} | sed -e 's|refs/tags/||g')"
+        env:
+          BUILD_HOSTNAME: ${{ matrix.image }}.github.integ.jp
       - name: Upload Assets
         uses: AButler/upload-release-assets@v2.0
         with:

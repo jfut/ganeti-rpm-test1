@@ -35,6 +35,8 @@ jobs:
         id: build_rpm
         run: |
           ./build $(echo ${BUILD_IMAGE} | sed 's/-/:/g') -a -bi
+        env:
+          BUILD_HOSTNAME: ${{ matrix.image }}.github.integ.jp
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
