@@ -29,11 +29,12 @@ Summary: Cluster virtual server management software
 License: BSD-2-Clause
 URL: http://code.google.com/p/ganeti/
 
-%if "%{rc_version}" == "rc"
+# TODO: CI test
+#%if "%{rc_version}" == "rc"
 Source0: https://jfut.integ.jp/linux/ganeti-test/ganeti-%{version}.tar.gz
-%else
-Source0: https://github.com/ganeti/ganeti/releases/download/v%{version}/ganeti-%{version}.tar.gz
-%endif
+#%else
+#Source0: https://github.com/ganeti/ganeti/releases/download/v%{version}/ganeti-%{version}.tar.gz
+#%endif
 Source1: ganeti.init
 Source2: ganeti.logrotate
 Source3: ganeti.sysconfig
